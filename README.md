@@ -23,12 +23,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Windows 10 (21H2)
 - Ubuntu Server 20.04
 
-<h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
 
 <h2>Actions and Observations</h2>
 
@@ -36,7 +31,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Create two virtual machines, Windows 10 machine and Linux machine, that are on the same Virtual Private Network. Paste the VM-1's public IP address onto Remote Desktop Connection and connect. Install Wireshark and open the software. Filter for ICMP traffic only. To terminate ICMP traffic navigate to Network Security Group in the Linux machine and add an inbound security rule. Deny all ICMP traffic with the priority off port 200. Click the ethernet button followed by the blue button at the top left corner. 
 </p>
 <br />
 
@@ -44,7 +39,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Filter Wireshark to capture Secure Shell Protocol (SSH) packet only in Windows 10 machine. In the Linux machine, command prompt "ssh labuser@10.0.0.5" to which the Wireshark capture Secure Shell Protocol.
 </p>
 <br />
 
@@ -52,6 +47,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Filter Dynamic Host Configuration Protocol (DHCP) in Wireshark. Type "ipconfig/renew" in command prompt and Wireshark will capture DHCP traffic.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Filter DNS traffic in Wireshark and initiate DNS trafic by typing in command prompt "nslookup www.google.com." The DNS server generate the IP address of any websites.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Filter RDP traffic in Wireshark by typing "tcp.port==3389. 
 </p>
 <br />
